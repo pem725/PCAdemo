@@ -48,7 +48,7 @@ shinyServer(function(input, output) {
     lout <- cbind(1:input$Nr,melt(pout$loadings[,1:input$Nr]))
     h.rn <- row.names(data.frame(pout$communality))
     h.sq <- data.frame(Var=h.rn,h2=pout$communality)
-    ggplot(data=h.sq) + geom_bar(aes(x=Var,y=h2),stat="identity") + coord_flip() + xlab("Variable") + ylab("Communality")
+    ggplot(data=h.sq) + geom_bar(aes(x=Var,y=h2,fill=Var),stat="identity") + coord_flip() + xlab("Variable") + ylab("Communality") + ylim(c(0,1))
   })
 
 })
