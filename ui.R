@@ -49,7 +49,10 @@ shinyUI(fluidPage(
                    "Promax (Similar to SPSS)" = "promax",
                    "Oblimin" = "oblimin",
                    "Simplimax" = "simplimax",
-                   "Cluster" = "cluster"))
+                   "Cluster" = "cluster")),
+      img(src="MRES2wbg.png",height=72),
+      "Product of the ",
+      span("MRES lab", style="color:blue")
     ),
 
     # Show plots
