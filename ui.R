@@ -22,42 +22,43 @@ shinyUI(fluidPage(
                   value = .5),
       sliderInput("N",
                   "Number of Observations:",
-                  min = 3,
+                  min = 50,
                   max = 1000,
+                  step = 50,
                   value = 200),
       sliderInput("Nv",
                   "Number of Variables:",
                   min = 6,
-                  max = 10,
-                  value = 6),
+                  max = 20,
+                  value = 9),
       sliderInput("Nc",
                   "Number of Distinct Components:",
                   min = 1,
-                  max = 3,
+                  max = 5,
                   value = 1),
       sliderInput("Nr",
                   "Number of Components to Retain:",
-                  min = 1,
+                  min = 2,
                   max = 6,
-                  value = 1)),
-#      radioButtons("rotate",
-#                   "Rotation Type:",
-#                  c("None" = "none",
-#                   "Varimax" = "varimax",
-#                   "Quatimax" = "quatimax",
-#                   "Promax (Similar to SPSS)" = "promax",
-#                  "Oblimin" = "oblimin",
-#                   "Simplimax" = "simplimax",
-#                   "Cluster" = "cluster"))
-#    ),
+                  value = 2),
+      radioButtons("rotate",
+                   "Rotation Type:",
+                  c("None" = "none",
+                   "Varimax" = "varimax",
+                   "Quatimax" = "quatimax",
+                   "Promax (Similar to SPSS)" = "promax",
+                   "Oblimin" = "oblimin",
+                   "Simplimax" = "simplimax",
+                   "Cluster" = "cluster"))
+    ),
 
     # Show plots
     mainPanel(
       tabsetPanel(
         tabPanel("Correlation Plot", plotOutput("corPlot")),
-        tabPanel("Scree Plot", plotOutput("screePlot"))
-#        tabPanel("Component Plot", plotOutput("compPlot")),
-#        tabPanel("Communality Plot", plotOutput("commPlot"))
+        tabPanel("Scree Plot", plotOutput("screePlot")),
+        tabPanel("Component Plot", plotOutput("compPlot")),
+        tabPanel("Communality Plot", plotOutput("commPlot"))
       )
     )
   )
